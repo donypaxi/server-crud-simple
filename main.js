@@ -3,6 +3,7 @@ const {dbConnection} = require('./db/config')
 const cors = require('cors')
 const app = express()
 app.use(cors())
+const PORT = process.env.PORT || 5000;
 
 const bodyparser = require('body-parser')
 const {usuarioPost,usuarioGet,usuarioPut,usuarioDelete} = require('./controller/usuario')
@@ -15,4 +16,4 @@ app.post('/', usuarioPost)
 app.put('/:id', usuarioPut)
 app.delete('/:id', usuarioDelete)
 
-app.listen(3000)
+app.listen(PORT)
